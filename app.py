@@ -5,6 +5,7 @@ import joblib
 from flask import Flask, request, jsonify, send_file, render_template
 
 app = Flask(__name__)
+CORS(app)
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 

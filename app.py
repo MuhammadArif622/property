@@ -1,4 +1,4 @@
-# app.py
+from flask_cors import CORS
 import os
 import pandas as pd
 import joblib

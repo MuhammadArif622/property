@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 import joblib
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, render_template
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
@@ -15,7 +15,7 @@ feature_columns = joblib.load("columns.pkl")
 
 @app.route('/')
 def home():
-    return jsonify({"message": "Welcome to the Distress Prediction API!"})
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def predict():

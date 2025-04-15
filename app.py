@@ -82,7 +82,8 @@ def predict():
 
         return jsonify({
             "distress_count": int(leads.shape[0]),
-            "preview": leads.head(5).to_dict(orient="records")
+            "preview": leads.head(5).to_dict(orient="records"),
+            "download_url": request.host_url + "download"
         })
 
     except Exception as e:
